@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/final_page_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/buttonsd"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="-1dp"
+        android:layout_marginBottom="1dp"
+        android:background="@color/Gray_X_11_Gray"
+        android:clipToPadding="false"
+        android:padding="4dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/final_example_item" />
+
+    <LinearLayout
+        android:id="@+id/buttonsd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/snow"
+        android:clipToPadding="true"
+        android:padding="4dp">
+
+        <Button
+            android:id="@+id/start_workout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="startWorkout"
+            android:text="Start Workout" />
+
+    </LinearLayout>
+</RelativeLayout>

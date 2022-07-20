@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/search_bar"
+        android:icon="@drawable/ic_searchbar"
+        android:title="Item 1"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/delete"
+        android:icon="@drawable/ic_delete"
+        android:title="Delete Exercises"
+        app:showAsAction="ifRoom" />
+
+</menu>

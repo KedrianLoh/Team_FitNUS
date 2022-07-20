@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Gray_X_11_Gray"
+    tools:context=".PrepExercise">
+
+    <TextView
+        android:id="@+id/getReady"
+        android:layout_width="300dp"
+        android:layout_height="123dp"
+        android:text="Get Ready!\nUp Next:"
+        android:textAlignment="center"
+        android:textColor="@color/orange"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/startEx"
+        android:layout_width="414dp"
+        android:layout_height="75dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Start Exercise!"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/snow"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.975" />
+
+    <TextView
+        android:id="@+id/exerciseLabels"
+        android:layout_width="295dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/recyclerview_rounded_background"
+        android:text="Sets: \n\n\nRepetitions: \n\n\nRest Interval: "
+        android:textAlignment="textStart"
+        android:textColor="@color/shadow"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameView" />
+
+    <TextView
+        android:id="@+id/repsView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/slate_gray"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/exerciseLabels"
+        app:layout_constraintStart_toStartOf="@+id/setsView"
+        app:layout_constraintTop_toTopOf="@+id/exerciseLabels"
+        app:layout_constraintVertical_bias="0.506"
+        tools:text="1 reps" />
+
+    <TextView
+        android:id="@+id/restView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="66dp"
+        android:textColor="@color/slate_gray"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginStart="-5dp"
+        app:layout_constraintStart_toStartOf="@+id/repsView"
+        app:layout_constraintTop_toBottomOf="@+id/repsView"
+        tools:text="1 min" />
+
+    <TextView
+        android:id="@+id/setsView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/slate_gray"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginTop="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/repsView"
+        app:layout_constraintEnd_toEndOf="@+id/exerciseLabels"
+        app:layout_constraintHorizontal_bias="0.913"
+        app:layout_constraintStart_toStartOf="@+id/exerciseLabels"
+        app:layout_constraintTop_toTopOf="@+id/exerciseLabels"
+        app:layout_constraintVertical_bias="0.16"
+        tools:text="1 sets" />
+
+    <TextView
+        android:id="@+id/nameView"
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:background="@drawable/mainmenubutton_background"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="33sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/getReady"
+        app:layout_constraintStart_toStartOf="@+id/getReady"
+        app:layout_constraintTop_toBottomOf="@+id/getReady"
+        tools:text="Dumbbell Shoulder Press" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

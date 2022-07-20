@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_5sdp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        app:cardBackgroundColor="@color/snow"
+        app:cardCornerRadius="@dimen/_14sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/displayMuscle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_8sdp"
+            android:src="@drawable/ic_completed" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginLeft="@dimen/_16sdp"
+        app:cardBackgroundColor="@color/card_background"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/mainmenubutton_background"
+            android:paddingStart="@dimen/_40sdp"
+            android:paddingLeft="@dimen/_40sdp"
+            android:paddingTop="@dimen/_16sdp"
+            android:paddingBottom="@dimen/_16sdp">
+
+            <TextView
+                android:id="@+id/text_view_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:text="Thin face needle"
+                android:textColor="@color/primary1"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/bracket1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" ("
+                android:textColor="@color/black_coral"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintBottom_toBottomOf="@+id/text_view_1"
+                app:layout_constraintStart_toEndOf="@id/text_view_1"
+                app:layout_constraintTop_toTopOf="@id/text_view_1" />
+
+            <TextView
+                android:id="@+id/inputNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="60"
+                android:textColor="@color/black_coral"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintBottom_toBottomOf="@id/bracket1"
+                app:layout_constraintStart_toEndOf="@id/bracket1"
+                app:layout_constraintTop_toTopOf="@+id/bracket1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="kg)"
+                android:textColor="@color/black_coral"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintBottom_toBottomOf="@id/inputNumber"
+                app:layout_constraintStart_toEndOf="@id/inputNumber"
+                app:layout_constraintTop_toTopOf="@id/inputNumber" />
+
+            <ImageView
+                android:id="@+id/image_view"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_7sdp"
+                android:src="@drawable/ic_delete"
+                app:layout_constraintBottom_toBottomOf="@id/textMuscle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/text_view_1"
+                app:tint="@color/shadow" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_2sdp"
+                android:visibility="visible"
+                android:layout_toStartOf="@+id/image_view"
+                app:layout_constraintBottom_toBottomOf="@id/image_view"
+                app:layout_constraintEnd_toStartOf="@id/image_view"
+                app:layout_constraintTop_toTopOf="@id/image_view"
+                app:srcCompat="@drawable/ic_edit"
+                app:tint="@color/shadow" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageMuscle"
+                android:layout_width="@dimen/_12sdp"
+                android:layout_height="@dimen/_12sdp"
+                android:src="@drawable/ic_dumbbell"
+                app:layout_constraintStart_toStartOf="@id/text_view_1"
+                app:layout_constraintTop_toBottomOf="@id/text_view_1"
+                app:tint="@color/secondary_text1" />
+
+            <TextView
+                android:id="@+id/textMuscle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:layout_marginBottom="0dp"
+                android:text="muscles involved"
+                android:textColor="@color/secondary_text1"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageMuscle"
+                app:layout_constraintStart_toEndOf="@+id/imageMuscle" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

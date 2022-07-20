@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/layoutBottomBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="206dp"
+        tools:layout_editor_absoluteY="69dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_14sdp"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:layout_marginEnd="@dimen/_14sdp"
+                android:text="Program"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_24ssp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.helper.widget.Flow
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                app:constraint_referenced_ids="cardPunch, cardWeight, cardRun, cardYoga"
+                app:flow_horizontalGap="@dimen/_3sdp"
+                app:flow_maxElementsWrap="2"
+                app:flow_verticalGap="@dimen/_3sdp"
+                app:flow_wrapMode="aligned"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textTitle" />
+
+            <soup.neumorphism.NeumorphCardView
+                android:id="@+id/cardPunch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:onClick="punchTraining"
+                app:neumorph_backgroundColor="@color/background"
+                app:neumorph_shadowColorDark="@color/dark_shadow"
+                app:neumorph_shadowColorLight="@color/light_shadow"
+                app:neumorph_shadowElevation="@dimen/_5sdp"
+                app:neumorph_shapeAppearance="@style/NeumorphismCard">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_15sdp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_32sdp"
+                        android:layout_height="@dimen/_32sdp"
+                        android:src="@drawable/ic_punch"
+                        android:tint="@color/primary" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:text="Punch\ntraining"
+                        android:textColor="@color/primary_text"
+                        android:textSize="@dimen/_14ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:text="In progress..."
+                        android:textColor="@color/secondary_text"
+                        android:textSize="@dimen/_12ssp" />
+
+                </LinearLayout>
+
+            </soup.neumorphism.NeumorphCardView>
+
+            <soup.neumorphism.NeumorphCardView
+                android:id="@+id/cardWeight"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:onClick="weightTraining"
+                app:neumorph_backgroundColor="@color/background"
+                app:neumorph_shadowColorDark="@color/dark_shadow"
+                app:neumorph_shadowColorLight="@color/light_shadow"
+                app:neumorph_shadowElevation="@dimen/_5sdp"
+                app:neumorph_shapeAppearance="@style/NeumorphismCard"
+                tools:ignore="MissingConstraints">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_15sdp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_32sdp"
+                        android:layout_height="@dimen/_32sdp"
+                        android:src="@drawable/ic_weight"
+                        android:tint="@color/primary" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:text="Weight\ntraining"
+                        android:textColor="@color/primary_text"
+                        android:textSize="@dimen/_14ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:text="Have Finished"
+                        android:textColor="@color/secondary_text"
+                        android:textSize="@dimen/_12ssp" />
+
+                </LinearLayout>
+
+            </soup.neumorphism.NeumorphCardView>
+
+            <soup.neumorphism.NeumorphCardView
+                android:id="@+id/cardRun"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:onClick="runTraining"
+                app:neumorph_backgroundColor="@color/background"
+                app:neumorph_shadowColorDark="@color/dark_shadow"
+                app:neumorph_shadowColorLight="@color/light_shadow"
+                app:neumorph_shadowElevation="@dimen/_5sdp"
+                app:neumorph_shapeAppearance="@style/NeumorphismCard"
+                tools:ignore="MissingConstraints">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_15sdp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_32sdp"
+                        android:layout_height="@dimen/_32sdp"
+                        android:src="@drawable/ic_run"
+                        android:tint="@color/primary" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:text="Run\ntraining"
+                        android:textColor="@color/primary_text"
+                        android:textSize="@dimen/_14ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:text="in Progress..."
+                        android:textColor="@color/secondary_text"
+                        android:textSize="@dimen/_12ssp" />
+
+                </LinearLayout>
+
+            </soup.neumorphism.NeumorphCardView>
+
+            <soup.neumorphism.NeumorphCardView
+                android:id="@+id/cardYoga"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:onClick="yogaTraining"
+                app:neumorph_backgroundColor="@color/background"
+                app:neumorph_shadowColorDark="@color/dark_shadow"
+                app:neumorph_shadowColorLight="@color/light_shadow"
+                app:neumorph_shadowElevation="@dimen/_5sdp"
+                app:neumorph_shapeAppearance="@style/NeumorphismCard"
+                tools:ignore="MissingConstraints">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_15sdp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_32sdp"
+                        android:layout_height="@dimen/_32sdp"
+                        android:src="@drawable/ic_yoga"
+                        android:tint="@color/primary" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:text="Yoga\ntraining"
+                        android:textColor="@color/primary_text"
+                        android:textSize="@dimen/_14ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:text="In progress..."
+                        android:textColor="@color/secondary_text"
+                        android:textSize="@dimen/_12ssp" />
+
+                </LinearLayout>
+
+            </soup.neumorphism.NeumorphCardView>
+
+            <TextView
+                android:id="@+id/textRecentHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_14sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_14sdp"
+                android:text="Recent History"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/cardRun" />
+
+            <soup.neumorphism.NeumorphCardView
+                android:id="@+id/cardRecentHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                app:layout_constraintTop_toBottomOf="@+id/textRecentHistory"
+                app:neumorph_backgroundColor="@color/background"
+                app:neumorph_shadowColorDark="@color/dark_shadow"
+                app:neumorph_shadowColorLight="@color/light_shadow"
+                app:neumorph_shadowElevation="@dimen/_5sdp"
+                app:neumorph_shapeAppearance="@style/NeumorphismCard">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_10sdp">
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/imageHistory"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_60sdp"
+                        android:src="@drawable/training"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:riv_corner_radius="@dimen/_8sdp" />
+
+                    <soup.neumorphism.NeumorphCardView
+                        android:id="@+id/cardRight"
+                        android:layout_width="@dimen/_48sdp"
+                        android:layout_height="@dimen/_48sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:neumorph_shadowElevation="@dimen/_3sdp"
+                        app:neumorph_shapeType="basin">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/_8sdp"
+                            android:onClick="viewHistories"
+                            android:src="@drawable/ic_right"
+                            android:tint="@color/primary" />
+
+
+                    </soup.neumorphism.NeumorphCardView>
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.5" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:text="Workouts done"
+                        android:textColor="@color/primary_text"
+                        android:textSize="@dimen/_14ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/guideline"
+                        app:layout_constraintEnd_toStartOf="@id/cardRight"
+                        app:layout_constraintStart_toEndOf="@id/imageHistory" />
+
+                    <TextView
+                        android:id="@+id/historyCount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:text="11 workouts in total"
+                        android:textColor="@color/secondary_text"
+                        android:textSize="@dimen/_13ssp"
+                        app:layout_constraintEnd_toStartOf="@+id/cardRight"
+                        app:layout_constraintStart_toEndOf="@id/imageHistory"
+                        app:layout_constraintTop_toBottomOf="@id/guideline" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </soup.neumorphism.NeumorphCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_8sdp"
+        android:background="@drawable/divider_background"
+        app:layout_constraintBottom_toTopOf="@id/layoutBottomBar" />
+
+    <LinearLayout
+        android:id="@+id/layoutBottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_60sdp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/_4sdp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_home"
+            android:tint="@color/primary" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_weight="1"
+            android:onClick="iconChart"
+            android:src="@drawable/ic_chart"
+            android:tint="@color/dark_icon" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_weight="1"
+            android:onClick="iconNotifications"
+            android:src="@drawable/ic_notification"
+            android:tint="@color/dark_icon" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_weight="1"
+            android:onClick="iconProfile"
+            android:src="@drawable/ic_profile"
+            android:tint="@color/dark_icon" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

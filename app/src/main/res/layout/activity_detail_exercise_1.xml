@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/upperLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/detailImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/detail_background"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/exerciseName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alfa_slab_one"
+                    android:gravity="center"
+                    android:text="Dumbbell Tricep PullOver"
+                    android:textColor="@color/primary"
+                    android:textSize="@dimen/_21ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@+id/detailImage" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:gravity="center"
+                    android:text="Enter Exercise Details!"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@+id/exerciseName" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:gravity="center"
+                        android:text="Sets"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_15ssp" />
+
+                    <EditText
+                        android:id="@+id/numberOfSets"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_60sdp"
+                        android:layout_gravity="center"
+                        android:background="@color/Gray_X_11_Gray"
+                        android:gravity="center"
+                        android:hint="x"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:textColor="@color/snow"
+                        android:textSize="@dimen/_17ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_40sdp"
+                        android:gravity="center"
+                        android:text="Repetitions"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_15ssp" />
+
+                    <EditText
+                        android:id="@+id/numberOfReps"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_60sdp"
+                        android:layout_gravity="center"
+                        android:background="@color/Gray_X_11_Gray"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        android:hint="x"
+                        android:textColor="@color/snow"
+                        android:textSize="@dimen/_17ssp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:gravity="center"
+                        android:text="Rest Time"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_15ssp" />
+
+                    <EditText
+                        android:id="@+id/restInterval"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_60sdp"
+                        android:layout_gravity="center"
+                        android:background="@color/Gray_X_11_Gray"
+                        android:gravity="center"
+                        android:hint="x"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:textColor="@color/snow"
+                        android:textSize="@dimen/_17ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_40sdp"
+                        android:gravity="center"
+                        android:text="Weight(kg)"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_15ssp" />
+
+                    <EditText
+                        android:id="@+id/weight"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_60sdp"
+                        android:layout_gravity="center"
+                        android:background="@color/Gray_X_11_Gray"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        android:hint="x"
+                        android:textColor="@color/snow"
+                        android:textSize="@dimen/_17ssp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/add_detailed_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Exercise !"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_20sdp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

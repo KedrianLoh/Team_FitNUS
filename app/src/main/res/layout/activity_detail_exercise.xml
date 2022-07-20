@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailExerciseActivity"
+    android:background="@color/Gray_X_11_Gray">
+
+    <TextView
+        android:id="@+id/exerciseName"
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        android:layout_marginTop="84dp"
+        android:background="@drawable/mainmenubutton_background"
+        android:gravity="center"
+        android:text="TextView"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/recyclerview_rounded_background"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Weight"
+        android:inputType="number"
+        android:maxLength="3"
+        android:minHeight="48dp"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exerciseName" />
+
+    <EditText
+        android:id="@+id/numberOfSets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:maxLength="2"
+        android:inputType="number"
+        android:background="@drawable/recyclerview_rounded_background"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Sets"
+        android:minHeight="48dp"
+        android:singleLine="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weight" />
+
+    <EditText
+        android:id="@+id/numberOfReps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:maxLength="3"
+        android:inputType="number"
+        android:background="@drawable/recyclerview_rounded_background"
+        android:singleLine="true"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Reps"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numberOfSets" />
+
+    <EditText
+        android:id="@+id/restInterval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:maxLength="2"
+        android:singleLine="true"
+        android:inputType="number"
+        android:background="@drawable/recyclerview_rounded_background"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Minutes"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numberOfReps" />
+
+    <TextView
+        android:id="@+id/tvLoad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Load(kg)"
+        app:layout_constraintBottom_toBottomOf="@+id/weight"
+        app:layout_constraintEnd_toStartOf="@+id/weight"
+        app:layout_constraintHorizontal_bias="0.535"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/weight" />
+
+    <TextView
+        android:id="@+id/tvSets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No. of Sets"
+        app:layout_constraintBottom_toBottomOf="@+id/numberOfSets"
+        app:layout_constraintEnd_toStartOf="@+id/numberOfSets"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/numberOfSets" />
+
+    <TextView
+        android:id="@+id/tvReps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No.of Reps"
+        app:layout_constraintBottom_toBottomOf="@+id/numberOfReps"
+        app:layout_constraintEnd_toStartOf="@+id/numberOfReps"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/numberOfReps" />
+
+    <TextView
+        android:id="@+id/tvRestInterval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rest Interval"
+        app:layout_constraintBottom_toBottomOf="@+id/restInterval"
+        app:layout_constraintEnd_toStartOf="@+id/restInterval"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/restInterval" />
+
+    <Button
+        android:id="@+id/add_detailed_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/restInterval"
+        app:layout_constraintVertical_bias="0.166" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

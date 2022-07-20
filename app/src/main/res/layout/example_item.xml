@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="@android:color/transparent"
+    app:cardCornerRadius="16dp"
+    android:layout_margin="4dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/mainmenubutton_background"
+        android:clipToOutline="true"
+        android:minHeight="70dp"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/ic_benchpress" />
+
+        <TextView
+            android:id="@+id/text_view_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/image_view"
+            android:layout_alignBottom="@+id/image_view"
+            android:layout_toEndOf="@+id/image_view"
+            android:gravity="center"
+            android:text="Line 1"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text_view_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/text_view_1"
+            android:layout_alignBottom="@+id/text_view_1"
+            android:layout_toEndOf="@+id/text_view_1"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:gravity="center"
+            android:text="TextView"
+            android:textSize="10sp" />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

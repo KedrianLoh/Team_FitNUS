@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="206dp"
+        tools:layout_editor_absoluteY="69dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_14sdp"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:layout_marginEnd="@dimen/_14sdp"
+                android:text="Program"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_24ssp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.helper.widget.Flow
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                app:constraint_referenced_ids="cardPunch"
+                app:flow_horizontalGap="@dimen/_3sdp"
+                app:flow_maxElementsWrap="1"
+                app:flow_verticalGap="@dimen/_3sdp"
+                app:flow_wrapMode="aligned"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textTitle" />
+
+            <soup.neumorphism.NeumorphCardView
+                android:id="@+id/cardPunch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:neumorph_backgroundColor="@color/background"
+                app:neumorph_shadowColorDark="@color/dark_shadow"
+                app:neumorph_shadowColorLight="@color/light_shadow"
+                app:neumorph_shadowElevation="@dimen/_5sdp"
+                app:neumorph_shapeAppearance="@style/NeumorphismCard">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_15sdp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_100sdp"
+                        android:src="@drawable/ic_profile"
+                        android:tint="@color/primary" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:gravity="center"
+                        android:text="User Profile"
+                        android:textColor="@color/primary_text"
+                        android:textSize="@dimen/_14ssp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </soup.neumorphism.NeumorphCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_8sdp"
+        android:background="@drawable/divider_background"
+        app:layout_constraintBottom_toTopOf="@id/layoutBottomBar" />
+
+    <LinearLayout
+        android:id="@+id/layoutBottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_60sdp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/_4sdp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_weight="1"
+            android:onClick="iconHome"
+            android:src="@drawable/ic_home"
+            android:tint="@color/dark_icon" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_weight="1"
+            android:onClick="iconChart"
+            android:src="@drawable/ic_chart"
+            android:tint="@color/dark_icon" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_weight="1"
+            android:onClick="iconNotifications"
+            android:src="@drawable/ic_notification"
+            android:tint="@color/dark_icon" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_profile"
+            android:tint="@color/primary" />
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

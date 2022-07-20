@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomePageActivity" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:gravity="center"
+        android:text="Welcome to FitNUS"
+        android:textSize="24sp" />
+
+    <ImageView
+        android:id="@+id/photo1"
+        android:layout_width="wrap_content"
+        android:layout_height="280dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="90dp"
+        android:onClick="createNewWorkout"
+        app:srcCompat="@drawable/photo11" />
+
+    <TextView
+        android:id="@+id/photo1text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/photo1"
+        android:layout_alignRight="@+id/photo1"
+        android:layout_alignBottom="@+id/photo1"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="Create New Workout"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+
+    <ImageView
+        android:id="@+id/photo2"
+        android:layout_width="196dp"
+        android:layout_height="287dp"
+        android:layout_below="@+id/photo1"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
+        android:onClick="viewWorkoutHistory"
+        app:srcCompat="@drawable/photo222" />
+
+    <TextView
+        android:id="@+id/photo2text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/photo2"
+        android:layout_alignTop="@+id/photo2"
+        android:layout_alignRight="@+id/photo2"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="View Workout History"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <ImageView
+        android:id="@+id/photo3"
+        android:layout_width="196dp"
+        android:layout_height="287dp"
+        android:layout_below="@+id/photo1"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="20dp"
+        android:onClick="profileSettings"
+        app:srcCompat="@drawable/photo33" />
+
+    <TextView
+        android:id="@+id/photo3text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/photo3"
+        android:layout_alignTop="@+id/photo3"
+        android:layout_alignRight="@+id/photo3"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="Profile Settings"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+</RelativeLayout>

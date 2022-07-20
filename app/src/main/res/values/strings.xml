@@ -1,0 +1,33 @@
+<resources>
+
+    <string name="app_name">abc</string>
+    <string name="recyclerviewexample">recyclerviewexample</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="recyclerviewexample_logo">recyclerviewexample_logo</string>
+    <string name="login_button">Login</string>
+    <string name="not_registered">Not registered?</string>
+    <string name="click_here">Click Here!</string>
+    <string name="registration">Registration:</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="full_name">Full Name</string>
+    <string name="password_register">Password</string>
+    <string name="email_address_register">Email Address</string>
+    <string name="register">Register</string>
+    <string name="back"><![CDATA[< Back]]></string>
+
+    <string-array name="TargetMuscle">
+        <item>chest</item>
+        <item>back</item>
+        <item>arms</item>
+        <item>legs</item>
+        <item>abs</item>
+    </string-array>
+
+    <string-array name="TargetBody">
+        <item>upper body</item>
+        <item>lower body</item>
+        <item>full body</item>
+    </string-array>
+
+</resources>
