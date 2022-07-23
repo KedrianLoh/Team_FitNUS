@@ -104,7 +104,7 @@
                     android:layout_height="wrap_content"
                     android:text="395"
                     android:textColor="@color/primary_text1"
-                    android:textSize="@dimen/_15ssp" />
+                    android:textSize="@dimen/_14ssp" />
 
             </LinearLayout>
 
@@ -140,7 +140,7 @@
                     android:layout_height="wrap_content"
                     android:text="147"
                     android:textColor="@color/primary_text1"
-                    android:textSize="@dimen/_15ssp" />
+                    android:textSize="@dimen/_14ssp" />
 
             </LinearLayout>
 
@@ -175,8 +175,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="448"
+                    android:gravity="center"
                     android:textColor="@color/primary_text1"
-                    android:textSize="@dimen/_15ssp" />
+                    android:textSize="@dimen/_14ssp" />
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

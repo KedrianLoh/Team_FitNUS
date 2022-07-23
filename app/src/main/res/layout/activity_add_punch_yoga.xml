@@ -28,7 +28,7 @@
             android:inputType="none"
             android:paddingTop="16dp"
             android:paddingBottom="16dp"
-            android:text="upper body" />
+            android:text="Upper body" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

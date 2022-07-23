@@ -36,10 +36,10 @@ class WorkoutHistoryInfoAdapter(private val listener: WorkoutHistoryInfoActivity
 
             0 -> {
                 holder.textView2.text = currentItem.muscle
-                if (currentItem.muscle == "upper body") {
-                    holder.imageView1.setImageResource(R.drawable.ic_punch)
-                } else if (currentItem.muscle == "lower body") {
-                    holder.imageView1.setImageResource(R.drawable.ic_kicking)
+                if (currentItem.muscle == "Upper body") {
+                    holder.imageView1.setImageResource(R.drawable.ic_punch2)
+                } else if (currentItem.muscle == "Lower body") {
+                    holder.imageView1.setImageResource(R.drawable.ic_kicking2)
                 } else {
                     holder.imageView1.setImageResource(R.drawable.ic_fullbody)
                 }
@@ -47,27 +47,28 @@ class WorkoutHistoryInfoAdapter(private val listener: WorkoutHistoryInfoActivity
 
             1 -> {
                 holder.textView2.text =
-                    "Sets: ${currentItem.sets} | Reps: ${currentItem.reps} | Rest: ${currentItem.time}"
+                    "Sets: ${currentItem.sets} | Reps: ${currentItem.reps} | Rest: ${currentItem.time} | Weight: ${currentItem.weight}kg"
                 when (currentItem.muscle) {
-                    "chest" -> holder.imageView1.setImageResource(R.drawable.ic_chest)
-                    "back" -> holder.imageView1.setImageResource(R.drawable.ic_back)
-                    "shoulders" -> holder.imageView1.setImageResource(R.drawable.ic_shoulder)
-                    "abs" -> holder.imageView1.setImageResource(R.drawable.ic_abs)
-                    "arms" -> holder.imageView1.setImageResource(R.drawable.ic_arms)
-                    "legs" -> holder.imageView1.setImageResource(R.drawable.ic_legs)
+                    "Chest" -> holder.imageView1.setImageResource(R.drawable.ic_chest)
+                    "Back" -> holder.imageView1.setImageResource(R.drawable.ic_back)
+                    "Shoulders" -> holder.imageView1.setImageResource(R.drawable.ic_shoulder)
+                    "Abs" -> holder.imageView1.setImageResource(R.drawable.ic_abs)
+                    "Arms" -> holder.imageView1.setImageResource(R.drawable.ic_arms)
+                    "Legs" -> holder.imageView1.setImageResource(R.drawable.ic_legs)
+                    "Full body" -> holder.imageView1.setImageResource(R.drawable.ic_fullbody2)
                 }
             }
 
             2 -> {
                 holder.textView2.text = "Start: ${currentItem.sets} | End : ${currentItem.reps}"
-                holder.imageView1.setImageResource(R.drawable.ic_run)
+                holder.imageView1.setImageResource(R.drawable.ic_run2)
             }
 
             3 -> {
                 holder.textView2.text = currentItem.muscle
-                if (currentItem.muscle == "upper body") {
+                if (currentItem.muscle == "Upper body") {
                     holder.imageView1.setImageResource(R.drawable.ic_yogaupper)
-                } else if (currentItem.muscle == "lower body") {
+                } else if (currentItem.muscle == "Lower body") {
                     holder.imageView1.setImageResource(R.drawable.ic_yogalower)
                 } else {
                     holder.imageView1.setImageResource(R.drawable.ic_yogafull)

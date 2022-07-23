@@ -53,7 +53,44 @@ class WorkoutHistoryInfoActivity : AppCompatActivity() {
         val textThirdTitle = findViewById<TextView>(R.id.textThirdTitle)
 
         when (WORKOUT_HISTORY_INFO!!.type) {
-            0 -> {}
+            0 -> {
+                textSecondTitle.text = "Total Exercises"
+                textThirdTitle.text = "Most impact"
+                textFirst.text = WORKOUT_HISTORY_INFO?.date?.substring(0, 10)
+                textSecond.text = WORKOUT_HISTORY_INFO!!.arrayList.size.toString()
+                var lowerCount = 0
+                var upperCount = 0
+                var fullCount = 0
+                for (elements in WORKOUT_HISTORY_INFO!!.arrayList) {
+                    when (elements.muscle) {
+                        "Lower body" -> {
+                            lowerCount += 1
+                        }
+                        "Upper body" -> {
+                            upperCount += 1
+                        }
+                        else -> {
+                            fullCount += 1
+                        }
+                    }
+                }
+                if (lowerCount > upperCount && lowerCount > fullCount) {
+                    textThird.text = "Lower"
+                } else if (lowerCount == upperCount && lowerCount > fullCount) {
+                    textThird.text = "Upper & Lower"
+                } else if (lowerCount == fullCount && lowerCount > upperCount) {
+                    textThird.text = "Lower & Full"
+                } else if (upperCount > lowerCount && upperCount > fullCount) {
+                    textThird.text = "Upper"
+                } else if (upperCount == fullCount && upperCount > lowerCount) {
+                    textThird.text = "Upper & Full"
+                } else if (fullCount > lowerCount && fullCount > upperCount) {
+                    textThird.text = "Full"
+                } else {
+                    textThird.text = "Equal!"
+                }
+            }
+
 
             1 -> {
                 var totalRepsDone = 0
@@ -75,10 +112,45 @@ class WorkoutHistoryInfoActivity : AppCompatActivity() {
                 textThird.text = WORKOUT_HISTORY_INFO!!.arrayList[0].time
             }
 
-            3 -> {}
+            3 -> {
+                textSecondTitle.text = "Total Exercises"
+                textThirdTitle.text = "Most impact"
+                textFirst.text = WORKOUT_HISTORY_INFO?.date?.substring(0, 10)
+                textSecond.text = WORKOUT_HISTORY_INFO!!.arrayList.size.toString()
+                var lowerCount = 0
+                var upperCount = 0
+                var fullCount = 0
+                for (elements in WORKOUT_HISTORY_INFO!!.arrayList) {
+                    when (elements.muscle) {
+                        "Lower body" -> {
+                            lowerCount += 1
+                        }
+                        "Upper body" -> {
+                            upperCount += 1
+                        }
+                        else -> {
+                            fullCount += 1
+                        }
+                    }
+                }
+                if (lowerCount > upperCount && lowerCount > fullCount) {
+                    textThird.text = "Lower"
+                } else if (lowerCount == upperCount && lowerCount > fullCount) {
+                    textThird.text = "Upper & Lower"
+                } else if (lowerCount == fullCount && lowerCount > upperCount) {
+                    textThird.text = "Lower & Full"
+                } else if (upperCount > lowerCount && upperCount > fullCount) {
+                    textThird.text = "Upper"
+                } else if (upperCount == fullCount && upperCount > lowerCount) {
+                    textThird.text = "Upper & Full"
+                } else if (fullCount > lowerCount && fullCount > upperCount) {
+                    textThird.text = "Full"
+                } else {
+                    textThird.text = "Equal!"
+                }
+            }
         }
     }
-
 
     fun deleteHistory() {
         viewModel.deleteHistory(WORKOUT_HISTORY_INFO!!)
@@ -93,6 +165,7 @@ class WorkoutHistoryInfoActivity : AppCompatActivity() {
                 viewModel1.insertTodo(array[i])
             }
             REUSE_WORKOUT = 1
+            TYPE_TRAINING = WORKOUT_HISTORY_INFO!!.type
         }
         val intent = Intent(this, FinalPage::class.java)
         startActivity(intent)
@@ -101,26 +174,43 @@ class WorkoutHistoryInfoActivity : AppCompatActivity() {
     }
 
     fun moreButton(view: View) {
-        builder.setTitle("More options")
-            .setMessage("What would you like to do?")
-            .setCancelable(true)
-            .setPositiveButton("Reuse") { _, it ->
-                reuseWorkout()
-                val intent = Intent(this, FinalPage::class.java)
-                startActivity(intent)
-                Toast.makeText(
-                    this,
-                    "Workout Reused",
-                    Toast.LENGTH_SHORT
-                ).show()
+        when (WORKOUT_HISTORY_INFO!!.type) {
+            0, 1, 3 -> {
+                builder.setTitle("More options")
+                    .setMessage("What would you like to do?")
+                    .setCancelable(true)
+                    .setPositiveButton("Reuse") { _, it ->
+                        reuseWorkout()
+                        val intent = Intent(this, FinalPage::class.java)
+                        startActivity(intent)
+                        Toast.makeText(
+                            this,
+                            "Workout Reused",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                    .setNeutralButton("Delete") { _, it ->
+                        deleteHistory()
+                        val intent = Intent(this, HistoryPageActivity::class.java)
+                        startActivity(intent)
+                    }
+                    .setNegativeButton("Cancel") { dialogInterface, it ->
+                        dialogInterface.cancel()
+                    }.show()
             }
-            .setNeutralButton("Delete") { _, it ->
-                deleteHistory()
-                val intent = Intent(this, HistoryPageActivity::class.java)
-                startActivity(intent)
+            2 -> {
+                builder.setTitle("More options")
+                    .setMessage("What would you like to do?")
+                    .setCancelable(true)
+                    .setPositiveButton("Delete") { _, it ->
+                        deleteHistory()
+                        val intent = Intent(this, HistoryPageActivity::class.java)
+                        startActivity(intent)
+                    }
+                    .setNegativeButton("Cancel") { dialogInterface, it ->
+                        dialogInterface.cancel()
+                    }.show()
             }
-            .setNegativeButton("Cancel") { dialogInterface, it ->
-                dialogInterface.cancel()
-            }.show()
+        }
     }
 }

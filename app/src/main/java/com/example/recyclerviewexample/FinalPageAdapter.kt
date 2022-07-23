@@ -59,10 +59,10 @@ class FinalPageAdapter(private val listener: FinalPage) :
                 holder.bracket2.setVisibility(INVISIBLE)
                 holder.inputNumber.setVisibility(INVISIBLE)
                 holder.editButton.setVisibility(INVISIBLE)
-                if (currentItem.muscle == "upper body") {
-                    holder.imageView.setImageResource(R.drawable.ic_punch)
-                } else if (currentItem.muscle == "lower body") {
-                    holder.imageView.setImageResource(R.drawable.ic_kicking)
+                if (currentItem.muscle == "Upper body") {
+                    holder.imageView.setImageResource(R.drawable.ic_punch2)
+                } else if (currentItem.muscle == "Lower body") {
+                    holder.imageView.setImageResource(R.drawable.ic_kicking2)
                 } else {
                     holder.imageView.setImageResource(R.drawable.ic_fullbody)
                 }
@@ -74,12 +74,13 @@ class FinalPageAdapter(private val listener: FinalPage) :
                     "Sets:${currentItem.sets} | Reps: ${currentItem.reps} | Rest: ${currentItem.time}"
                 holder.textView3.text = currentItem.weight
                 when (currentItem.muscle) {
-                    "chest" -> holder.imageView.setImageResource(R.drawable.ic_chest)
-                    "back" -> holder.imageView.setImageResource(R.drawable.ic_back)
-                    "shoulders" -> holder.imageView.setImageResource(R.drawable.ic_shoulder)
-                    "abs" -> holder.imageView.setImageResource(R.drawable.ic_abs)
-                    "arms" -> holder.imageView.setImageResource(R.drawable.ic_arms)
-                    "legs" -> holder.imageView.setImageResource(R.drawable.ic_legs)
+                    "Chest" -> holder.imageView.setImageResource(R.drawable.ic_chest)
+                    "Back" -> holder.imageView.setImageResource(R.drawable.ic_back)
+                    "Shoulders" -> holder.imageView.setImageResource(R.drawable.ic_shoulder)
+                    "Abs" -> holder.imageView.setImageResource(R.drawable.ic_abs)
+                    "Arms" -> holder.imageView.setImageResource(R.drawable.ic_arms)
+                    "Legs" -> holder.imageView.setImageResource(R.drawable.ic_legs)
+                    "Full body" -> holder.imageView.setImageResource(R.drawable.ic_fullbody2)
                 }
             }
 
@@ -91,9 +92,9 @@ class FinalPageAdapter(private val listener: FinalPage) :
                 holder.bracket2.setVisibility(INVISIBLE)
                 holder.inputNumber.setVisibility(INVISIBLE)
                 holder.editButton.setVisibility(INVISIBLE)
-                if (currentItem.muscle == "upper body") {
+                if (currentItem.muscle == "Upper body") {
                     holder.imageView.setImageResource(R.drawable.ic_yogaupper)
-                } else if (currentItem.muscle == "lower body") {
+                } else if (currentItem.muscle == "Lower body") {
                     holder.imageView.setImageResource(R.drawable.ic_yogalower)
                 } else {
                     holder.imageView.setImageResource(R.drawable.ic_yogafull)

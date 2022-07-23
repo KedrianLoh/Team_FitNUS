@@ -35,7 +35,7 @@
                 android:layout_marginStart="@dimen/_8sdp"
                 android:layout_marginTop="@dimen/_8sdp"
                 android:layout_marginEnd="@dimen/_8sdp"
-                app:constraint_referenced_ids="cardPunch"
+                app:constraint_referenced_ids="cardProfile"
                 app:flow_horizontalGap="@dimen/_3sdp"
                 app:flow_maxElementsWrap="1"
                 app:flow_verticalGap="@dimen/_3sdp"
@@ -45,7 +45,7 @@
                 app:layout_constraintTop_toBottomOf="@id/textTitle" />
 
             <soup.neumorphism.NeumorphCardView
-                android:id="@+id/cardPunch"
+                android:id="@+id/cardProfile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:neumorph_backgroundColor="@color/background"
@@ -80,6 +80,85 @@
 
             </soup.neumorphism.NeumorphCardView>
 
+            <soup.neumorphism.NeumorphCardView
+                android:id="@+id/profileName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:neumorph_backgroundColor="@color/background"
+                app:neumorph_shadowColorDark="@color/dark_shadow"
+                app:neumorph_shadowColorLight="@color/light_shadow"
+                app:neumorph_shadowElevation="@dimen/_3sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardProfile">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/nameTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Name : "
+                    android:textSize="@dimen/_14ssp"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@+id/nameTextView"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:hint="Enter Name Here"
+                    android:background="null"
+                    android:textSize="@dimen/_14ssp" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </soup.neumorphism.NeumorphCardView>
+
+            <soup.neumorphism.NeumorphCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:neumorph_backgroundColor="@color/background"
+                app:neumorph_shadowColorDark="@color/dark_shadow"
+                app:neumorph_shadowColorLight="@color/light_shadow"
+                app:neumorph_shadowElevation="@dimen/_3sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profileName">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/heightTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Height : "
+                        android:textSize="@dimen/_14ssp"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toEndOf="@+id/heightTextView"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:hint="Enter Height (cm)"
+                        android:background="null"
+                        android:textSize="@dimen/_14ssp" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </soup.neumorphism.NeumorphCardView>
+
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
@@ -113,14 +192,6 @@
             android:layout_weight="1"
             android:onClick="iconChart"
             android:src="@drawable/ic_chart"
-            android:tint="@color/dark_icon" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_20sdp"
-            android:layout_weight="1"
-            android:onClick="iconNotifications"
-            android:src="@drawable/ic_notification"
             android:tint="@color/dark_icon" />
 
         <androidx.appcompat.widget.AppCompatImageView

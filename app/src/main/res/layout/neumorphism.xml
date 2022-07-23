@@ -81,6 +81,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/punchLine2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_4sdp"
@@ -126,6 +127,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/weightLine2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_4sdp"
@@ -171,6 +173,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/runLine2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_4sdp"
@@ -216,6 +219,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/yogaLine2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_4sdp"
@@ -361,14 +365,6 @@
             android:layout_weight="1"
             android:onClick="iconChart"
             android:src="@drawable/ic_chart"
-            android:tint="@color/dark_icon" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_20sdp"
-            android:layout_weight="1"
-            android:onClick="iconNotifications"
-            android:src="@drawable/ic_notification"
             android:tint="@color/dark_icon" />
 
         <androidx.appcompat.widget.AppCompatImageView

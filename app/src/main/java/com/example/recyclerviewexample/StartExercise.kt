@@ -214,6 +214,6 @@ class StartExercise : AppCompatActivity() {
                 )
             )
         }
-        USER_NOTES = "ADDED"
+//        USER_NOTES = "ADDED"
     }
 }

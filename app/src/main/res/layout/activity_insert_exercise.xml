@@ -28,7 +28,7 @@
             android:inputType="none"
             android:paddingTop="16dp"
             android:paddingBottom="16dp"
-            android:text="chest" />
+            android:text="Chest" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
