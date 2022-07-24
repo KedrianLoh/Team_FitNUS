@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.recyclerviewexample.R
 import com.example.recyclerviewexample.database.ExerciseDetail
 import kotlinx.android.synthetic.main.activity_insert_exercise.*
+import kotlinx.android.synthetic.main.run_default_page.*
 
 class InsertExercise : AppCompatActivity() {
 
@@ -24,6 +25,7 @@ class InsertExercise : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        supportActionBar?.hide()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_insert_exercise)
 
@@ -43,6 +45,8 @@ class InsertExercise : AppCompatActivity() {
 
     override fun onBackPressed() {
 //        super.onBackPressed()
+        val intent = Intent(this , SelectPageActivity::class.java)
+        startActivity(intent)
     }
 
 }

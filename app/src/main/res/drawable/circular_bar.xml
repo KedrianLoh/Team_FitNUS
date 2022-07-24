@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--Start of Code for Grey Background Ring-->
+    <item>
+        <shape
+            android:shape="ring"
+            android:thicknessRatio="9"
+            android:useLevel="true">
+            <solid android:color="@color/slate_gray" />
+        </shape>
+    </item>
+    <!--End of Code for Grey Ring-->
+
+    <!--Start of code for Blue Progress Ring-->
+    <item>
+        <shape
+            android:shape="ring"
+            android:thicknessRatio="16"
+            android:useLevel="false">
+            <solid android:color="@color/dashboard_item_1" />
+        </shape>
+    </item>
+</layer-list>

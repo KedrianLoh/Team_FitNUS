@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/kedri/AndroidStudioProjects/FitNUS-master/app/src/main/res/drawable/cancel_smaller.xml" value="0.268" />
+        <entry key="..\:/Users/kedri/AndroidStudioProjects/FitNUS-master/app/src/main/res/drawable/checkmark_smaller.xml" value="0.268" />
+        <entry key="..\:/Users/kedri/AndroidStudioProjects/FitNUS-master/app/src/main/res/drawable/circular_bar.xml" value="0.268" />
         <entry key="..\:/Users/kedri/AndroidStudioProjects/FitNUS-master/app/src/main/res/drawable/mainmenubutton_background.xml" value="0.325" />
         <entry key="..\:/Users/kedri/AndroidStudioProjects/FitNUS-master/app/src/main/res/drawable/running_background.xml" value="0.325" />
         <entry key="..\:/Users/kedri/AndroidStudioProjects/FitNUS-master/app/src/main/res/layout/activity_add_punch_yoga.xml" value="0.5541666666666667" />
@@ -10,7 +13,7 @@
         <entry key="..\:/Users/kedri/AndroidStudioProjects/FitNUS-master/app/src/main/res/layout/activity_detail_exercise_1.xml" value="0.29814814814814816" />
         <entry key="..\:/Users/kedri/AndroidStudioProjects/FitNUS-master/app/src/main/res/layout/activity_final_page.xml" value="0.31354166666666666" />
         <entry key="..\:/Users/kedri/AndroidStudioProjects/FitNUS-master/app/src/main/res/layout/activity_home_page.xml" value="0.29814814814814816" />
-        <entry key="..\:/Users/kedri/AndroidStudioProjects/FitNUS-master/app/src/main/res/layout/activity_insert_exercise.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/kedri/AndroidStudioProjects/FitNUS-master/app/src/main/res/layout/activity_insert_exercise.xml" value="0.1" />
         <entry key="..\:/Users/kedri/AndroidStudioProjects/FitNUS-master/app/src/main/res/layout/activity_main2.xml" value="0.29814814814814816" />
         <entry key="..\:/Users/kedri/AndroidStudioProjects/FitNUS-master/app/src/main/res/layout/activity_main_page.xml" value="0.29814814814814816" />
         <entry key="..\:/Users/kedri/AndroidStudioProjects/FitNUS-master/app/src/main/res/layout/activity_prep_exercise.xml" value="0.29814814814814816" />
@@ -23,11 +26,11 @@
         <entry key="..\:/Users/kedri/AndroidStudioProjects/FitNUS-master/app/src/main/res/layout/final_example_item.xml" value="0.5541666666666667" />
         <entry key="..\:/Users/kedri/AndroidStudioProjects/FitNUS-master/app/src/main/res/layout/history_example_item.xml" value="0.5541666666666667" />
         <entry key="..\:/Users/kedri/AndroidStudioProjects/FitNUS-master/app/src/main/res/layout/neumorphism.xml" value="0.5541666666666667" />
-        <entry key="..\:/Users/kedri/AndroidStudioProjects/FitNUS-master/app/src/main/res/layout/neumorphism_chart.xml" value="0.1" />
+        <entry key="..\:/Users/kedri/AndroidStudioProjects/FitNUS-master/app/src/main/res/layout/neumorphism_chart.xml" value="0.432808155699722" />
         <entry key="..\:/Users/kedri/AndroidStudioProjects/FitNUS-master/app/src/main/res/layout/neumorphism_history.xml" value="0.29814814814814816" />
         <entry key="..\:/Users/kedri/AndroidStudioProjects/FitNUS-master/app/src/main/res/layout/neumorphism_profile.xml" value="0.4491346559729844" />
         <entry key="..\:/Users/kedri/AndroidStudioProjects/FitNUS-master/app/src/main/res/layout/records_user_interface.xml" value="0.29814814814814816" />
-        <entry key="..\:/Users/kedri/AndroidStudioProjects/FitNUS-master/app/src/main/res/layout/run_default_page.xml" value="0.425" />
+        <entry key="..\:/Users/kedri/AndroidStudioProjects/FitNUS-master/app/src/main/res/layout/run_default_page.xml" value="0.4491346559729844" />
         <entry key="..\:/Users/kedri/AndroidStudioProjects/FitNUS-master/app/src/main/res/layout/runx1.xml" value="0.44166666666666665" />
         <entry key="..\:/Users/kedri/AndroidStudioProjects/Team_FitNUS-master/app/src/main/res/drawable/actionbar_background.xml" value="0.177" />
         <entry key="..\:/Users/kedri/AndroidStudioProjects/Team_FitNUS-master/app/src/main/res/drawable/container_background.xml" value="0.128" />

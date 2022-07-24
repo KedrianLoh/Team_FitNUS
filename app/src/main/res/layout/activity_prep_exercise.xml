@@ -4,53 +4,72 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Gray_X_11_Gray"
+    android:background="@drawable/purplecolor"
     tools:context=".PrepExercise">
 
     <TextView
         android:id="@+id/getReady"
-        android:layout_width="300dp"
-        android:layout_height="123dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
         android:text="Get Ready!\nUp Next:"
         android:textAlignment="center"
-        android:textColor="@color/orange"
+        android:textColor="@color/dark_grey"
         android:textSize="48sp"
         android:textStyle="bold"
-        android:layout_marginTop="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/startEx"
-        android:layout_width="414dp"
-        android:layout_height="75dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:fontFamily="sans-serif-black"
         android:text="Start Exercise!"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="@color/snow"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline8"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.975" />
+        app:layout_constraintTop_toTopOf="@+id/guideline7"
+        app:layout_constraintVertical_bias="0.573" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline7"
+        app:layout_constraintEnd_toEndOf="@+id/exerciseLabels"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/exerciseLabels"
+        app:layout_constraintTop_toTopOf="@+id/guideline6"
+        app:layout_constraintVertical_bias="0.483"
+        app:srcCompat="@drawable/gym" />
 
     <TextView
         android:id="@+id/exerciseLabels"
-        android:layout_width="295dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/recyclerview_rounded_background"
-        android:text="Sets: \n\n\nRepetitions: \n\n\nRest Interval: "
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/baby_powder"
+        android:paddingLeft="50dp"
+        android:text="Sets: \n\nRepetitions: \n\nRest Interval: \n"
         android:textAlignment="textStart"
         android:textColor="@color/shadow"
         android:textSize="28sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameView" />
+        app:layout_constraintBottom_toTopOf="@+id/guideline6"
+        app:layout_constraintEnd_toEndOf="@+id/nameView"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/nameView"
+        app:layout_constraintTop_toTopOf="@+id/guideline4"
+        app:layout_constraintVertical_bias="0.036" />
 
     <TextView
         android:id="@+id/repsView"
@@ -59,53 +78,105 @@
         android:textColor="@color/slate_gray"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/exerciseLabels"
+        app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintStart_toStartOf="@+id/setsView"
         app:layout_constraintTop_toTopOf="@+id/exerciseLabels"
-        app:layout_constraintVertical_bias="0.506"
+        app:layout_constraintVertical_bias="0.377"
         tools:text="1 reps" />
 
     <TextView
         android:id="@+id/restView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="66dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="28dp"
         android:textColor="@color/slate_gray"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:layout_marginStart="-5dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintStart_toStartOf="@+id/repsView"
         app:layout_constraintTop_toBottomOf="@+id/repsView"
+        app:layout_constraintVertical_bias="0.173"
         tools:text="1 min" />
 
     <TextView
         android:id="@+id/setsView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
         android:textColor="@color/slate_gray"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:layout_marginTop="2dp"
-        app:layout_constraintBottom_toTopOf="@+id/repsView"
+        app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintEnd_toEndOf="@+id/exerciseLabels"
-        app:layout_constraintHorizontal_bias="0.913"
+        app:layout_constraintHorizontal_bias="0.902"
         app:layout_constraintStart_toStartOf="@+id/exerciseLabels"
         app:layout_constraintTop_toTopOf="@+id/exerciseLabels"
-        app:layout_constraintVertical_bias="0.16"
+        app:layout_constraintVertical_bias="0.033"
         tools:text="1 sets" />
 
     <TextView
         android:id="@+id/nameView"
         android:layout_width="match_parent"
-        android:layout_height="92dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/mainmenubutton_background"
         android:gravity="center"
         android:textColor="@color/black"
         android:textSize="33sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/getReady"
-        app:layout_constraintStart_toStartOf="@+id/getReady"
-        app:layout_constraintTop_toBottomOf="@+id/getReady"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp"
         tools:text="Dumbbell Shoulder Press" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="27dp"
+        app:layout_constraintGuide_percent="0.0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="200dp"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.32996634" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="504dp"
+        app:layout_constraintGuide_percent="0.58" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="756dp"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintGuide_begin="1281dp"
+        app:layout_constraintGuide_percent="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

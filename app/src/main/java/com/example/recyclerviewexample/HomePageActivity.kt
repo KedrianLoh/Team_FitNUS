@@ -157,7 +157,7 @@ class HomePageActivity : AppCompatActivity() {
                 when (elements.type) {
                     0 -> {
                         punchExercisesCount += elements.arrayList.size
-                        for (i in 0 until elements.arrayList.size - 1) {
+                        for (i in 0 until elements.arrayList.size) {
                             when (elements.arrayList[i].muscle) {
                                 "Full body" -> { punchFullCount += 1 }
                                 "Upper body" -> { punchUpperCount += 1 }

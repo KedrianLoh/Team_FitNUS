@@ -57,7 +57,7 @@ class StartExercise : AppCompatActivity() {
                 }
                 countdownMilis.text =
                     (millisUntilFinished - (millisUntilFinished / 1000 * 1000)).toString()
-                val timeLeft: Int = (millisUntilFinished.toFloat() / RESTCOUNT * 100).toInt()
+                val timeLeft: Int = (millisUntilFinished.toFloat() / RESTCOUNT * 60000).toInt()
                 progressBar.setProgress(timeLeft)
             }
 

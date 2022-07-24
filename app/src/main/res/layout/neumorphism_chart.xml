@@ -236,7 +236,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="@dimen/_4sdp"
-                                android:text="Total reps done :  -"
+                                android:text="Heaviest Lift :  -"
                                 android:textColor="@color/primary_text"
                                 android:textSize="@dimen/_10ssp"
                                 android:textStyle="bold" />
