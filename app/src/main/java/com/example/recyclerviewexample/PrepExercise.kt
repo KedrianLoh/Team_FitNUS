@@ -19,6 +19,7 @@ class PrepExercise : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_prep_exercise)
+        supportActionBar?.hide()
         viewModel = ViewModelProvider(this).get(TodoViewModel::class.java)
         lifecycleScope.launch(Dispatchers.IO) {
             val allTodos = viewModel.getListTodos()
@@ -48,5 +49,7 @@ class PrepExercise : AppCompatActivity() {
     }
     override fun onBackPressed() {
 //        super.onBackPressed()
+        val intent = Intent(this, FinalPage::class.java)
+        startActivity(intent)
     }
 }

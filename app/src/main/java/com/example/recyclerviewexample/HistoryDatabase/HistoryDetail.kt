@@ -24,6 +24,7 @@ data class HistoryDetail(
     val type: Int = 0,
 
     val notes: String
+
 ) {}
 
 class arrayListTypeConverter {

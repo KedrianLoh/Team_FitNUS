@@ -12,10 +12,24 @@ import androidx.lifecycle.lifecycleScope
 import com.example.recyclerviewexample.HistoryDatabase.HistoryDetail
 import com.example.recyclerviewexample.TodoDatabase.TodoDetail
 import kotlinx.android.synthetic.main.activity_start_exercise.*
+import kotlinx.android.synthetic.main.activity_start_exercise.backButton
+import kotlinx.android.synthetic.main.activity_start_exercise.completeEx
+import kotlinx.android.synthetic.main.activity_start_exercise.completeRest
+import kotlinx.android.synthetic.main.activity_start_exercise.countdownMilis
+import kotlinx.android.synthetic.main.activity_start_exercise.countdownMinutes
+import kotlinx.android.synthetic.main.activity_start_exercise.countdownSeconds
+import kotlinx.android.synthetic.main.activity_start_exercise.currentExercise
+import kotlinx.android.synthetic.main.activity_start_exercise.progressBar
+import kotlinx.android.synthetic.main.activity_start_exercise.repetitions
+import kotlinx.android.synthetic.main.activity_start_exercise.setCounter
+import kotlinx.android.synthetic.main.activity_start_exercise.skipRest
+import kotlinx.android.synthetic.main.activity_start_exercise.timerInstructions
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.collections.ArrayList
+
 
 val sdf = SimpleDateFormat("dd/MM/yyyy   HH:mm:ss")
 
@@ -28,6 +42,7 @@ class StartExercise : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.hide()
         setContentView(R.layout.activity_start_exercise)
         viewModel = ViewModelProvider(this).get(TodoViewModel::class.java)
         viewModel1 = ViewModelProvider(this).get(HistoryViewModel::class.java)
@@ -136,7 +151,7 @@ class StartExercise : AppCompatActivity() {
                         timerInstructions.visibility = View.INVISIBLE
                     }
                     if (currentSet == totalSet) {
-                        completeRest.text = "Complete Exercise"
+                            completeRest.text = "Complete Exercise"
                     }
                     completeRest.setOnClickListener {
                         progressBar.setProgress(100)
@@ -174,13 +189,13 @@ class StartExercise : AppCompatActivity() {
                             val intent = Intent(this@StartExercise, PrepExercise::class.java)
                             startActivity(intent)
                         } else {
+                            addHistory() // works
                             lifecycleScope.launch(Dispatchers.IO) {
                                 val allTodos = viewModel.getListTodos()
                                 for(elements in allTodos) {
                                     viewModel.deleteTodo(elements)
                                 }
                             }
-                            addHistory() // works
                             runOnUiThread {
                                 Toast.makeText(
                                     applicationContext,

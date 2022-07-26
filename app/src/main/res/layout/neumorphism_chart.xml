@@ -472,14 +472,6 @@
             android:src="@drawable/ic_chart"
             android:tint="@color/primary" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_20sdp"
-            android:layout_weight="1"
-            android:onClick="iconProfile"
-            android:src="@drawable/ic_profile"
-            android:tint="@color/dark_icon" />
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

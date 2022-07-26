@@ -55,7 +55,8 @@ class Registration : AppCompatActivity() {
         }
     }
     override fun onBackPressed() {
-//        super.onBackPressed()
+        val intent = Intent(this, MainActivity2::class.java)
+        startActivity(intent)
     }
 }
 

@@ -140,6 +140,7 @@
         android:id="@+id/imageView5"
         android:layout_width="match_parent"
         android:layout_height="137dp"
+        android:adjustViewBounds="true"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
         app:layout_constraintHorizontal_bias="0.43"

@@ -2,15 +2,23 @@ package com.example.recyclerviewexample
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import android.view.Window
+import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import com.example.recyclerviewexample.ProfileDatabase.ProfileDetail
+import kotlinx.android.synthetic.main.neumorphism_profile.*
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.w3c.dom.Text
 
@@ -20,6 +28,8 @@ class HomePageActivity : AppCompatActivity() {
 
     private lateinit var historyViewModel: HistoryViewModel
     private lateinit var todoViewModel: TodoViewModel
+    private lateinit var profileViewModel: ProfileViewModel
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,14 +37,13 @@ class HomePageActivity : AppCompatActivity() {
         setContentView(R.layout.neumorphism)
         historyViewModel = ViewModelProvider(this).get(HistoryViewModel::class.java)
         todoViewModel = ViewModelProvider(this).get(TodoViewModel::class.java)
+        profileViewModel = ViewModelProvider(this).get(ProfileViewModel::class.java)
 
         convertLine2Titles()
         displayHistoryCountAndWipeTodo()
         // Resetting the global variables: Workout Notes and Type Of Training
         USER_NOTES = null
         TYPE_TRAINING = 0
-
-//        Toast.makeText(this, "changed!", Toast.LENGTH_SHORT).show()
     }
 
     private fun displayHistoryCountAndWipeTodo() {
@@ -51,6 +60,16 @@ class HomePageActivity : AppCompatActivity() {
                 historyCount.text = "${workoutHistorySize} workout in total"
             }
         }
+    }
+
+    fun updateProfile(view: View) {
+        val name = findViewById<EditText>(R.id.nameInput).text.toString()
+        val height = findViewById<EditText>(R.id.heightInput).text.toString()
+        val weight = findViewById<EditText>(R.id.weightInput).text.toString()
+        val gender = findViewById<EditText>(R.id.genderInput).text.toString()
+        val newProfile = ProfileDetail(name, height, weight, gender)
+        profileViewModel.insertProfile(newProfile)
+        Toast.makeText(this, "Profile updated!", Toast.LENGTH_SHORT).show()
     }
 
     private fun convertLine2Titles() {
@@ -107,6 +126,25 @@ class HomePageActivity : AppCompatActivity() {
         }
     }
 
+    private fun displayProfileDetails() {
+        lifecycleScope.launch(Dispatchers.IO) {
+            val listOfProfiles = profileViewModel.getListProfile()
+            if (listOfProfiles.isNotEmpty()) {
+                val latestProfile = listOfProfiles[listOfProfiles.size - 1]
+                val displayName = latestProfile.profileName
+                val displayHeight = latestProfile.profileHeight
+                val displayWeight = latestProfile.profileWeight
+                val displayGender = latestProfile.profileGender
+                    runOnUiThread {
+                        nameInput.setText(displayName)
+                        heightInput.setText(displayHeight)
+                        weightInput.setText(displayWeight)
+                        genderInput.setText(displayGender)
+                    }
+            }
+        }
+    }
+
     fun iconHome(view: View) {
         setContentView(R.layout.neumorphism)
         displayHistoryCountAndWipeTodo()
@@ -115,13 +153,16 @@ class HomePageActivity : AppCompatActivity() {
 
     fun iconProfile(view: View) {
         setContentView(R.layout.neumorphism_profile)
+        displayProfileDetails()
     }
 
     fun iconChart(view: View) {
         setContentView(R.layout.neumorphism_chart)
-        lifecycleScope.launch (Dispatchers.IO) {
-        val listOfHistory = historyViewModel.getListHistory()
-        // for punch details
+
+        lifecycleScope.launch(Dispatchers.IO) {
+            val listOfHistory = historyViewModel.getListHistory()
+
+            // for punch details
             val punchExercises = findViewById<TextView>(R.id.punchTotalExercise)
             val punchFull = findViewById<TextView>(R.id.punchFullBody)
             val punchUpper = findViewById<TextView>(R.id.punchUpperBody)
@@ -130,7 +171,7 @@ class HomePageActivity : AppCompatActivity() {
             var punchFullCount = 0
             var punchUpperCount = 0
             var punchLowerCount = 0
-        // for weight details
+            // for weight details
             val weightExercises = findViewById<TextView>(R.id.weightTotalExercise)
             val weightSets = findViewById<TextView>(R.id.weightTotalSets)
             val weightReps = findViewById<TextView>(R.id.weightTotalReps)
@@ -138,12 +179,12 @@ class HomePageActivity : AppCompatActivity() {
             var weightSetsCount = 0
             var heaviestLiftName: String = "heavy"
             var heaviestLiftNumber = 0
-        // for run details
+            // for run details
             val runDistance = findViewById<TextView>(R.id.runTotalDistance)
             val runDuration = findViewById<TextView>(R.id.runTotalDuration)
             var runDistanceCount = 0.0
             var runDurationCount = 0
-        // for yoga details
+            // for yoga details
             val yogaExercises = findViewById<TextView>(R.id.yogaTotalExercise)
             val yogaFull = findViewById<TextView>(R.id.yogaFullbody)
             val yogaUpper = findViewById<TextView>(R.id.yogaUpperBody)
@@ -153,15 +194,21 @@ class HomePageActivity : AppCompatActivity() {
             var yogaUpperCount = 0
             var yogaLowerCount = 0
 
-            for(elements in listOfHistory) {
+            for (elements in listOfHistory) {
                 when (elements.type) {
                     0 -> {
                         punchExercisesCount += elements.arrayList.size
                         for (i in 0 until elements.arrayList.size) {
                             when (elements.arrayList[i].muscle) {
-                                "Full body" -> { punchFullCount += 1 }
-                                "Upper body" -> { punchUpperCount += 1 }
-                                "Lower body" -> { punchLowerCount += 1 }
+                                "Full body" -> {
+                                    punchFullCount += 1
+                                }
+                                "Upper body" -> {
+                                    punchUpperCount += 1
+                                }
+                                "Lower body" -> {
+                                    punchLowerCount += 1
+                                }
                             }
                         }
                         punchExercises.setText("Total Exercise : ${punchExercisesCount}")
@@ -173,7 +220,7 @@ class HomePageActivity : AppCompatActivity() {
                     1 -> {
                         weightExercisesCount += elements.arrayList.size
                         for (i in 0 until elements.arrayList.size) {
-                          weightSetsCount += elements.arrayList[i].sets.toInt()
+                            weightSetsCount += elements.arrayList[i].sets.toInt()
                             if (elements.arrayList[i].weight.toInt() > heaviestLiftNumber) {
                                 heaviestLiftNumber = elements.arrayList[i].weight.toInt()
                                 heaviestLiftName = elements.arrayList[i].name
@@ -195,9 +242,15 @@ class HomePageActivity : AppCompatActivity() {
                         yogaExercisesCount += elements.arrayList.size
                         for (i in 0 until elements.arrayList.size) {
                             when (elements.arrayList[i].muscle) {
-                                "Full body" -> { yogaFullCount += 1 }
-                                "Upper body" -> { yogaUpperCount += 1 }
-                                "Lower body" -> { yogaLowerCount += 1 }
+                                "Full body" -> {
+                                    yogaFullCount += 1
+                                }
+                                "Upper body" -> {
+                                    yogaUpperCount += 1
+                                }
+                                "Lower body" -> {
+                                    yogaLowerCount += 1
+                                }
                             }
                         }
                         yogaExercises.setText("Total Exercise : ${yogaExercisesCount}")
@@ -219,29 +272,31 @@ class HomePageActivity : AppCompatActivity() {
         TYPE_TRAINING = 0
         val intent = Intent(this, FinalPage::class.java)
         startActivity(intent)
-        Toast.makeText(this, "Start by inputting your exercises!!", Toast.LENGTH_LONG).show()
+        Toast.makeText(this, "Start by inputting your exercises!!", Toast.LENGTH_SHORT).show()
     }
 
     fun weightTraining(view: View) {
         TYPE_TRAINING = 1
         val intent = Intent(this, FinalPage::class.java)
         startActivity(intent)
-        Toast.makeText(this, "Start by selecting your exercises!!", Toast.LENGTH_LONG).show()
+        Toast.makeText(this, "Start by selecting your exercises!!", Toast.LENGTH_SHORT).show()
     }
 
     fun runTraining(view: View) {
         TYPE_TRAINING = 2
         val intent = Intent(this, FinalPage::class.java)
         startActivity(intent)
-        Toast.makeText(this, "Enter your Running details!!", Toast.LENGTH_LONG).show()
+        Toast.makeText(this, "Enter your Running details!!", Toast.LENGTH_SHORT).show()
     }
 
     fun yogaTraining(view: View) {
         TYPE_TRAINING = 3
         val intent = Intent(this, FinalPage::class.java)
         startActivity(intent)
-        Toast.makeText(this, "Start by inputting your exercises!!", Toast.LENGTH_LONG).show()
+        Toast.makeText(this, "Start by inputting your exercises!!", Toast.LENGTH_SHORT).show()
     }
 
-
+    override fun onBackPressed() {
+//        super.onBackPressed()
+    }
 }

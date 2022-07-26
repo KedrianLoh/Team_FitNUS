@@ -89,13 +89,31 @@ class DetailExerciseActivity : AppCompatActivity() {
         val input4 = editText4.text.toString()
         val input5 = editText5.text.toString()
         if (input1.isNotEmpty() && input2.isNotEmpty() && input3.isNotEmpty() && input4.isNotEmpty() && input5.isNotEmpty()) {
-            val exerciseId = viewModel1.getTodoDetail(itemName).id
-            val exerciseMuscle = viewModel1.getTodoDetail(itemName).muscle
-            viewModel1.updateTodo(TodoDetail(input1, input2, input3, input4, input5, exerciseMuscle, exerciseId))
-            val intent = Intent(this, FinalPage::class.java)
-            startActivity(intent)
+            if (input2.toInt() != 0 && input3.toInt() != 0 && input4.toInt() != 0 && input5.toInt() != 0) {
+                val exerciseId = viewModel1.getTodoDetail(itemName).id
+                val exerciseMuscle = viewModel1.getTodoDetail(itemName).muscle
+                viewModel1.updateTodo(
+                    TodoDetail(
+                        input1,
+                        input2,
+                        input3,
+                        input4,
+                        input5,
+                        exerciseMuscle,
+                        exerciseId
+                    )
+                )
+                val intent = Intent(this, FinalPage::class.java)
+                startActivity(intent)
+            } else {
+                runOnUiThread {
+                    Toast.makeText(this, "Inputs cannot be 0!", Toast.LENGTH_SHORT).show()
+                }
+            }
         } else {
-            Toast.makeText(this, "Missing Details!", Toast.LENGTH_SHORT).show()
+            runOnUiThread {
+                Toast.makeText(this, "Missing Details!", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
@@ -113,16 +131,19 @@ class DetailExerciseActivity : AppCompatActivity() {
         val input5 = editText5.text.toString()
         val input6 = intent.getStringExtra(EXTRA_MESSAGE2)!!
         if (input1.isNotEmpty() && input2.isNotEmpty() && input3.isNotEmpty() && input4.isNotEmpty() && input5.isNotEmpty()) {
-            // we need viewmodel here
-            viewModel1.insertTodo(TodoDetail(input1, input2, input3, input4, input5, input6))
-            Toast.makeText(this, "$input1 successfully added", Toast.LENGTH_SHORT).show()
-            // move to activity
-            val intent = Intent(this, SelectPageActivity::class.java)
-            startActivity(intent)
+            if (input2.toInt() != 0 && input3.toInt() != 0 && input4.toInt() != 0 && input5.toInt() != 0) {
+                // we need viewmodel here
+                viewModel1.insertTodo(TodoDetail(input1, input2, input3, input4, input5, input6))
+                Toast.makeText(this, "$input1 successfully added", Toast.LENGTH_SHORT).show()
+                // move to activity
+                val intent = Intent(this, SelectPageActivity::class.java)
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "Inputs cannot be 0!", Toast.LENGTH_SHORT).show()
+            }
         } else {
             Toast.makeText(this, "Missing Details!", Toast.LENGTH_SHORT).show()
         }
     }
-
 }
 

@@ -7,23 +7,48 @@
     android:background="@drawable/purplecolor"
     tools:context=".PrepExercise">
 
-    <TextView
-        android:id="@+id/getReady"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline999"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <LinearLayout
+        android:id="@+id/topLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:text="Get Ready!\nUp Next:"
-        android:textAlignment="center"
-        android:textColor="@color/dark_grey"
-        android:textSize="48sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/exerciseLabels"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="TextContrastCheck" />
+        app:layout_constraintTop_toTopOf="@id/guideline999">
+
+        <TextView
+            android:id="@+id/getReady"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Get Ready!\nUp Next:"
+            android:textAlignment="center"
+            android:textColor="@color/dark_grey"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/nameView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/_4sdp"
+            android:paddingBottom="@dimen/_4sdp"
+            android:background="@drawable/mainmenubutton_background"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="33sp"
+            android:textStyle="bold"
+            tools:text="Dumbbell Shoulder Press" />
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/startEx"
@@ -46,90 +71,112 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline7"
-        app:layout_constraintEnd_toEndOf="@+id/exerciseLabels"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/exerciseLabels"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline6"
         app:layout_constraintVertical_bias="0.483"
         app:srcCompat="@drawable/gym" />
 
-    <TextView
+    <androidx.cardview.widget.CardView
         android:id="@+id/exerciseLabels"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        app:cardElevation="0dp"
+        android:layout_marginTop="@dimen/_4sdp"
+        app:cardCornerRadius="@dimen/_8sdp"
+        app:layout_constraintBottom_toTopOf="@id/guideline6"
+        app:layout_constraintTop_toBottomOf="@id/topLinearLayout">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="@color/baby_powder"
-        android:paddingLeft="50dp"
-        android:text="Sets: \n\nRepetitions: \n\nRest Interval: \n"
+        android:paddingLeft="40dp"
         android:textAlignment="textStart"
         android:textColor="@color/shadow"
         android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline6"
-        app:layout_constraintEnd_toEndOf="@+id/nameView"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/nameView"
-        app:layout_constraintTop_toTopOf="@+id/guideline4"
-        app:layout_constraintVertical_bias="0.036" />
+        app:layout_constraintTop_toBottomOf="@id/topLinearLayout">
 
-    <TextView
-        android:id="@+id/repsView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/slate_gray"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline6"
-        app:layout_constraintStart_toStartOf="@+id/setsView"
-        app:layout_constraintTop_toTopOf="@+id/exerciseLabels"
-        app:layout_constraintVertical_bias="0.377"
-        tools:text="1 reps" />
+        <TextView
+            android:id="@+id/setsTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:text="Sets :"
+            android:textColor="@color/black"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toTopOf="@+id/repsTv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/restView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="28dp"
-        android:textColor="@color/slate_gray"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline6"
-        app:layout_constraintStart_toStartOf="@+id/repsView"
-        app:layout_constraintTop_toBottomOf="@+id/repsView"
-        app:layout_constraintVertical_bias="0.173"
-        tools:text="1 min" />
+        <TextView
+            android:id="@+id/setsView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:textColor="@color/slate_gray"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/setsTv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/setsTv"
+            tools:text="1 sets" />
 
-    <TextView
-        android:id="@+id/setsView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:textColor="@color/slate_gray"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline6"
-        app:layout_constraintEnd_toEndOf="@+id/exerciseLabels"
-        app:layout_constraintHorizontal_bias="0.902"
-        app:layout_constraintStart_toStartOf="@+id/exerciseLabels"
-        app:layout_constraintTop_toTopOf="@+id/exerciseLabels"
-        app:layout_constraintVertical_bias="0.033"
-        tools:text="1 sets" />
+        <TextView
+            android:id="@+id/repsTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:text="Reps :"
+            android:textColor="@color/black"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toTopOf="@+id/restTv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/setsTv" />
 
-    <TextView
-        android:id="@+id/nameView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/mainmenubutton_background"
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:textSize="33sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline4"
-        app:layout_constraintTop_toTopOf="@+id/guideline3"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="0dp"
-        tools:text="Dumbbell Shoulder Press" />
+        <TextView
+            android:id="@+id/repsView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/slate_gray"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/repsTv"
+            app:layout_constraintEnd_toEndOf="@id/setsView"
+            app:layout_constraintStart_toStartOf="@+id/setsView"
+            app:layout_constraintTop_toTopOf="@+id/repsTv"
+            tools:text="1 reps" />
+
+        <TextView
+            android:id="@+id/restTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rest :"
+            android:textColor="@color/black"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/repsTv" />
+
+        <TextView
+            android:id="@+id/restView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/slate_gray"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/restTv"
+            app:layout_constraintEnd_toEndOf="@id/setsView"
+            app:layout_constraintStart_toStartOf="@id/setsView"
+            app:layout_constraintTop_toTopOf="@id/restTv"
+            tools:text="1 min" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline1"
@@ -144,15 +191,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="200dp"
-        app:layout_constraintGuide_percent="0.2" />
+        app:layout_constraintGuide_end="713dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.32996634" />
+        app:layout_constraintGuide_end="597dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline6"
@@ -167,7 +213,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="756dp"
         app:layout_constraintGuide_percent="0.9" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -176,7 +221,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintGuide_begin="1281dp"
-        app:layout_constraintGuide_percent="1.0" />
+        app:layout_constraintGuide_end="0dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

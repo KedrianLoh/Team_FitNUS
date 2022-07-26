@@ -128,7 +128,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_20sdp"
                         android:gravity="center"
-                        android:text="Rest Time"
+                        android:text="Rest(mins)"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_15ssp" />
 
